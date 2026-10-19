@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co http://127.0.0.1:54321 ws://127.0.0.1:54321; worker-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Flow — your personal financial command centre" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" type="image/png" href="/flow-app/favicon.png" />
+    <link rel="apple-touch-icon" href="/flow-app/icons/apple-touch-icon.png" />
+    <title>Flow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script>
+      // paint the saved theme before the app loads (no flash); data-scheme is the resolved light/dark the CSS uses
+      (function () {
+        var theme = 'system'
+        try { theme = localStorage.getItem('flow.theme') || 'system' } catch (e) {}
+        document.documentElement.dataset.theme = theme
+        document.documentElement.dataset.scheme = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'
+      })()
+    </script>
+    <script type="module" crossorigin src="/flow-app/assets/index-BkeGD-zM.js"></script>
+    <link rel="stylesheet" crossorigin href="/flow-app/assets/index-CvEjX3Nl.css">
+  <link rel="manifest" href="/flow-app/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/flow-app/registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
